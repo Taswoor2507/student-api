@@ -16,3 +16,4 @@
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Go
 storage
+/config
