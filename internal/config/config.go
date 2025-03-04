@@ -2,7 +2,6 @@ package config
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"os"
 
@@ -10,7 +9,7 @@ import (
 )
 
 type HTTPServer struct {
-	Addr string
+	Addr string `yaml:"address" env-required:"true"`
 }
 
 type Config struct {
@@ -28,7 +27,7 @@ func MustLoad() *Config {
 		flags := flag.String("config", "", "Path to the configuration file")
 		flag.Parse()
 
-		fmt.Println(flags)
+		// fmt.Println(flags)
 		configPath = *flags
 		// if not found on flag then show error message
 		if configPath == "" {
